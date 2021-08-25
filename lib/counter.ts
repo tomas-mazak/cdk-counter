@@ -9,6 +9,7 @@ const PARAMETER_PREFIX = '/github.com/tomas-mazak/cdk-counter';
 
 export interface CounterProviderProps {
     readonly name: string;
+    readonly decrementOnDelete?: boolean;
 }
 
 export class CounterProvider extends cdk.Construct {
@@ -29,6 +30,7 @@ export class CounterProvider extends cdk.Construct {
             handler: 'index.handler',
             environment: {
                 DYNAMODB_TABLE_NAME: table.tableName,
+                DECREMENT_ON_UPDATE: props.decrementOnDelete ? 'True' : '',
             },
         });
 
