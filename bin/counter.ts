@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { CounterStack } from '../lib/counter-stack';
+import { CounterStack, IncrementStack } from '../lib/counter-stack';
 
 const app = new cdk.App();
 new CounterStack(app, 'CounterStack', {
@@ -19,3 +19,5 @@ new CounterStack(app, 'CounterStack', {
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
+
+new IncrementStack(app, 'IncrementStack');
