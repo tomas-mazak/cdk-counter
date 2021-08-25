@@ -30,7 +30,7 @@ export class CounterProvider extends cdk.Construct {
             handler: 'index.handler',
             environment: {
                 DYNAMODB_TABLE_NAME: table.tableName,
-                DECREMENT_ON_UPDATE: props.decrementOnDelete ? 'True' : '',
+                DECREMENT_ON_DELETE: props.decrementOnDelete ? 'True' : '',
             },
         });
 
